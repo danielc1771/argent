@@ -1,6 +1,11 @@
 import datetime
 import requests
+import pymongo
 from bs4 import BeautifulSoup
+
+uri = 'mongodb://admin:troy69@ds151007.mlab.com:51007/argent'
+client = pymongo.MongoClient(uri)
+db = client['argent']
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0) Gecko/20100101 Firefox/68.0'}
@@ -26,5 +31,8 @@ for item in items:
                    'timestamp': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
 
 for item in prices:
-    print('Price for ' + item['name'] + ' as of ' +
-          item['timestamp'] + ': ' + item['price'])
+    db.items.insert_one({
+        'item': item['name'],
+        'price': item['price'],
+        'timestamp': item['timestamp']
+    })
