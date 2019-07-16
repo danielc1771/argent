@@ -16,6 +16,11 @@ app.get("/api/items", (req, res) => {
   db.collection("items")
     .aggregate([
       {
+        $sort: {
+          timestamp: -1
+        }
+      },
+      {
         $group: {
           _id: "$item",
           item: { $first: "$item" },
