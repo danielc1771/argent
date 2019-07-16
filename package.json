@@ -1,0 +1,30 @@
+{
+  "name": "argent",
+  "version": "1.0.0",
+  "description": "Amazon price checker",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix webby",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielc1771/argent.git"
+  },
+  "author": "Daniel Castro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielc1771/argent/issues"
+  },
+  "homepage": "https://github.com/danielc1771/argent#readme",
+  "dependencies": {
+    "concurrently": "^4.1.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

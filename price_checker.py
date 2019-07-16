@@ -3,7 +3,7 @@ import requests
 import pymongo
 from bs4 import BeautifulSoup
 
-uri = 'mongodb://admin:troy69@ds151007.mlab.com:51007/argent'
+uri = 'mongodb://admin:troy1234@ds151007.mlab.com:51007/argent'
 client = pymongo.MongoClient(uri)
 db = client['argent']
 
