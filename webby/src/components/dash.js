@@ -21,7 +21,7 @@ class Dash extends React.Component {
       for (let price of item.prices) {
         prices.push(
           <div>
-            Price: {price.price} As Of: {price.timestamp}
+            Item: {} Price: {price.price} As Of: {price.timestamp}
           </div>
         );
       }

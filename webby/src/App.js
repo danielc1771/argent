@@ -1,11 +1,13 @@
 import React from "react";
 import "./App.css";
-import Dash from "./components/dash";
+import Navbar from "./components/Navbar";
+import Homepage from "./components/Homepage";
 
 function App() {
   return (
     <div>
-      <Dash />
+      <Navbar />
+      <Homepage />
     </div>
   );
 }

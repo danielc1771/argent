@@ -1,0 +1,16 @@
+.searchResults {
+  width: 40vw;
+  position: absolute;
+  background-color: #fff;
+  max-height: 200px;
+  overflow-y: auto;
+  top: 3em;
+  z-index: 99;
+  border-radius: 1%;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.searchItem {
+  margin-top: 12px;
+}

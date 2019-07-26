@@ -12,6 +12,7 @@ MongoClient.connect(uri, (err, client) => {
   db = client.db("argent");
   app.listen(port, () => console.log(`server listening on port ${port}...`));
 });
+
 app.get("/api/items", (req, res) => {
   db.collection("items")
     .aggregate([
@@ -40,5 +41,31 @@ app.get("/api/items", (req, res) => {
         console.log(err);
       }
       res.send(result);
+    });
+});
+
+app.get("/api/available/items", (req, res) => {
+  db.collection("prices")
+    .aggregate([
+      {
+        $group: {
+          _id: 0,
+          items: {
+            $addToSet: "$item"
+          }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          items: 1
+        }
+      }
+    ])
+    .toArray(function(err, result) {
+      if (err) {
+        console.log(err);
+      }
+      res.send(result[0].items);
     });
 });
