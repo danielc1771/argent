@@ -51,7 +51,7 @@ app.get("/api/available/items", (req, res) => {
         $group: {
           _id: 0,
           items: {
-            $addToSet: "$item"
+            $addToSet: { name: "$item", category: "$category" }
           }
         }
       },
@@ -67,5 +67,30 @@ app.get("/api/available/items", (req, res) => {
         console.log(err);
       }
       res.send(result[0].items);
+    });
+});
+
+app.get("/api/prices/:category/:item", (req, res) => {
+  let category = req.params["category"];
+  let item = req.params["item"];
+  db.collection("prices")
+    .aggregate([
+      {
+        $match: {
+          item: item,
+          category: category
+        }
+      },
+      {
+        $sort: {
+          timestamp: -1
+        }
+      }
+    ])
+    .toArray(function(err, result) {
+      if (err) {
+        console.log(err);
+      }
+      res.send(result);
     });
 });
