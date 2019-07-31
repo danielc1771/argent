@@ -23,7 +23,9 @@
     "concurrently": "^4.1.1",
     "express": "^4.17.1",
     "mongodb": "^3.2.7",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1",
+    "zingchart": "^2.8.6",
+    "zingchart-react": "^1.0.7"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"

@@ -1,4 +1,5 @@
 import React from "react";
+import PriceChart from "./PriceChart";
 
 class Item extends React.Component {
   constructor() {
@@ -36,12 +37,7 @@ class Item extends React.Component {
         </div>
         <div className="row">
           <div className="col">
-            <h3>Prices:</h3>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <ul>{itemPrices}</ul>
+            <PriceChart data={this.state.prices} />
           </div>
         </div>
       </div>
