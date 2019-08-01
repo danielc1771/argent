@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Argent",
+  "version": "1.0",
+
+  "description": "Receive an e-mail when price for a given item on Amazon reachers a certain price.",
+
+  "icons": {
+    "48": "icons/argent-48.png",
+    "96": "icons/argent-96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.amazon.com/*"],
+      "js": ["htmlscraper.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["jquery.js", "argent.js"]
+  },
+  "permissions": ["webRequest", "tabs", "activeTab"],
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/argent-16.png",
+      "32": "icons/argent-32.png"
+    }
+  }
+}
