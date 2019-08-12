@@ -20,9 +20,10 @@ for li in categories_list.findAll('li'):
         categories.append({'category': tag.text, 'url': tag['href']})
 
 for category in categories:
-    db.categories.insert_one({
-        'category': category['category'],
-        'url': category['url'],
-        'timestamp': datetime.datetime.now()
-    })
+    # db.categories.insert_one({
+    #     'category': category['category'],
+    #     'url': category['url'],
+    #     'timestamp': datetime.datetime.now()
+    # })
+    print(categories)
 print('Inserted ', len(categories), ' items...')
