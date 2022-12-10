@@ -21,7 +21,7 @@
   "homepage": "https://github.com/danielc1771/argent#readme",
   "dependencies": {
     "concurrently": "^4.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.2.7",
     "react-router-dom": "^5.0.1",
     "zingchart": "^2.8.6",
